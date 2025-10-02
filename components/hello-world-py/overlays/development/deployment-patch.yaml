@@ -13,4 +13,5 @@ spec:
     spec:
       containers:
       - image: quay.io/redhat-tssc/task-runner:1.7
-        name: container-image  
+        name: container-image
+
