@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hello-world-py-gitops
+  description: This is GitOps manifest for hello-world-py   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=hello-world-py
+    backstage.io/kubernetes-id: hello-world-py 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hello-world-py
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hello-world-py
